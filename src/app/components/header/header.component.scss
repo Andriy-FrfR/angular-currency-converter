@@ -1,0 +1,44 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: #303030;
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    height: 100px;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+
+  &-title {
+    text-align: center;
+    font-size: 35px;
+    color: rgba(255, 255, 255, 0.85);
+  }
+}
+
+.rates {
+  display: flex;
+  height: 50px;
+  border-bottom: 3px solid rgb(141, 198, 65);
+
+  &-item {
+    strong {
+      font-size: 30px;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    font-size: 26px;
+    color: rgba(255, 255, 255, 0.7);
+
+    &:last-child {
+      margin-left: 30px;
+    }
+  }
+}

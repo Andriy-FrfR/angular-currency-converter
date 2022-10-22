@@ -1,0 +1,36 @@
+<div class="currency-converter">
+  <div class="row">
+    <select
+      [ngModel]="convertedFrom"
+      (ngModelChange)="convertedFrom = $event; onCurrencyChange()"
+    >
+      <option *ngFor="let currency of supportedCurrencies" [value]="currency">
+        {{ currency }}
+      </option>
+    </select>
+    <input
+      inputmode="numeric"
+      placeholder="200.00"
+      type="number"
+      [ngModel]="convertedFromValue"
+      (ngModelChange)="onConvertedFromValueChange($event)"
+    />
+  </div>
+  <div class="row">
+    <select
+      [ngModel]="convertedTo"
+      (ngModelChange)="convertedTo = $event; onCurrencyChange()"
+    >
+      <option *ngFor="let currency of supportedCurrencies" [value]="currency">
+        {{ currency }}
+      </option>
+    </select>
+    <input
+      inputmode="numeric"
+      placeholder="200.00"
+      type="number"
+      [ngModel]="convertedToValue"
+      (ngModelChange)="onConvertedToValueChange($event)"
+    />
+  </div>
+</div>
