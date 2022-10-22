@@ -1,20 +1,28 @@
 .currency-converter {
-  margin: 150px auto 0;
-  width: 600px;
-  height: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 700px;
   border-radius: 4px;
+  margin: 150px auto 0;
   padding: 50px 30px;
   background-color: rgb(48, 48, 48);
 }
 
-.row {
+.swap-currencies-btn {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 40px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.col {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 
 select {
-  width: 30%;
+  width: 100%;
   height: 40px;
 
   border: none;
@@ -47,13 +55,13 @@ option {
 }
 
 input {
-  width: 65%;
+  width: 100%;
   height: 40px;
 
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 
-  padding: 0 0 0 20px;
+  padding: 0 17px 0 20px;
 
   background-color: transparent;
   outline: none;

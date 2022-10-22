@@ -1,5 +1,12 @@
 <div class="currency-converter">
-  <div class="row">
+  <div class="col">
+    <input
+      inputmode="numeric"
+      placeholder="200.00"
+      type="number"
+      [ngModel]="convertedFromValue"
+      (ngModelChange)="onConvertedFromValueChange($event)"
+    />
     <select
       [ngModel]="convertedFrom"
       (ngModelChange)="convertedFrom = $event; onCurrencyChange()"
@@ -8,15 +15,20 @@
         {{ currency }}
       </option>
     </select>
+  </div>
+  <i
+    class="material-icons swap-currencies-btn"
+    (click)="onSwapCurrenciesBtnClick()"
+    >swap_horiz</i
+  >
+  <div class="col">
     <input
       inputmode="numeric"
       placeholder="200.00"
       type="number"
-      [ngModel]="convertedFromValue"
-      (ngModelChange)="onConvertedFromValueChange($event)"
+      [ngModel]="convertedToValue"
+      (ngModelChange)="onConvertedToValueChange($event)"
     />
-  </div>
-  <div class="row">
     <select
       [ngModel]="convertedTo"
       (ngModelChange)="convertedTo = $event; onCurrencyChange()"
@@ -25,12 +37,5 @@
         {{ currency }}
       </option>
     </select>
-    <input
-      inputmode="numeric"
-      placeholder="200.00"
-      type="number"
-      [ngModel]="convertedToValue"
-      (ngModelChange)="onConvertedToValueChange($event)"
-    />
   </div>
 </div>

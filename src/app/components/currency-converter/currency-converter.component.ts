@@ -84,4 +84,14 @@ export class CurrencyConverterComponent implements OnInit, OnDestroy {
       this.rates[this.convertedFrom][this.convertedTo] * this.convertedFromValue
     ).toFixed(2);
   }
+
+  public onSwapCurrenciesBtnClick(): void {
+    let tmp: any = this.convertedFrom;
+    this.convertedFrom = this.convertedTo;
+    this.convertedTo = tmp;
+
+    tmp = this.convertedFromValue;
+    this.convertedFromValue = this.convertedToValue;
+    this.convertedToValue = tmp;
+  }
 }
