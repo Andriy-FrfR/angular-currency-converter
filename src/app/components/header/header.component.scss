@@ -1,41 +1,59 @@
+@import "/src/assets/styles/variables";
+@import "/src/assets/styles/mixins";
+
 .header {
+  @include border-bottom-main;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  background-color: #303030;
+  background-color: $background-color-grey;
 
   &-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: $height-header;
     max-width: 1200px;
-    height: 100px;
     padding: 0 15px;
     margin: 0 auto;
+
+    @media (max-width: 568px) {
+      justify-content: center;
+    }
   }
 
   &-title {
     text-align: center;
-    font-size: 35px;
-    color: rgba(255, 255, 255, 0.85);
+    font-size: $font-size-title;
+    color: $color-light;
+    user-select: none;
+
+    @media (max-width: 568px) {
+      display: none;
+    }
   }
 }
 
 .rates {
+  @include border-bottom-green;
+  border-bottom-width: 3px;
   display: flex;
   height: 50px;
-  border-bottom: 3px solid rgb(141, 198, 65);
+  user-select: none;
 
   &-item {
     strong {
-      font-size: 30px;
-      color: rgba(255, 255, 255, 0.85);
+      font-size: $font-size-big;
+      color: $color-light;
+
+      @media (max-width: 568px) {
+        font-size: $font-size-medium;
+      }
     }
 
-    font-size: 26px;
-    color: rgba(255, 255, 255, 0.7);
+    font-size: $font-size-medium;
+    color: $color-light-darken;
 
     &:last-child {
       margin-left: 30px;

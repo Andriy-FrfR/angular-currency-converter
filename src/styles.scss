@@ -1,9 +1,50 @@
+@import "./assets/styles/mixins";
+@import "./assets/styles/variables";
+
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  @include normalize;
+}
+
+// Form controls
+
+select {
+  @include form-control;
+  color: $color-light-darken;
+  cursor: pointer;
+
+  &:focus {
+    color: $color-light;
+  }
+}
+
+option {
+  background-color: $background-color-option;
+  cursor: pointer;
+
+  &:checked {
+    background-color: $background-color-option-checked;
+  }
+}
+
+input {
+  @include form-control;
+  padding: 0 17px 0 20px;
+  color: $color-light;
+
+  &:focus::placeholder {
+    color: $color-dark;
+  }
+
+  &::placeholder {
+    color: $color-dark-lighten;
+    transition: all 0.1s linear;
+  }
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }

@@ -1,0 +1,38 @@
+@import "./variables";
+
+@mixin normalize {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: $font-size-default;
+}
+
+@mixin border-bottom-main {
+  border-bottom: 1px solid $color-border-grey;
+}
+
+@mixin border-bottom-green {
+  border-bottom: 1px solid $color-border-green;
+}
+
+@mixin form-control {
+  width: 100%;
+  height: $height-input;
+
+  border: none;
+  @include border-bottom-main;
+
+  background-color: transparent;
+  outline: none;
+  text-align: right;
+  transition: all 0.1s linear;
+
+  &:hover {
+    border-bottom-color: $color-border-grey-lighten;
+  }
+
+  &:focus {
+    @include border-bottom-green;
+  }
+}
